@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style> /*style for all divs so they appear as colored squares in a row */
+		div {
+			width: 60px;
+			height: 60px;
+			margin: 5px;
+			float: left;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!--a set of 4 squares to help with example 1 -->
+	<div style="background-color:red;" class="topRow"></div>
+	<div style="background-color:blue;" class="topRow"></div>
+	<div style="background-color:green;" class="topRow"></div>
+	<div style="background-color:yellow;" class="topRow"></div>
+
+	<!--example code for example 1 -->
+	<pre>
+		$("topRow").click(function() {
+			$(this).css("background-color", "black");
+		});
+	</pre><br><br>
+
+	<!--a set of 4 squares to help with example 2 -->
+	<div style="background-color:red;" class="one"></div>
+	<div style="background-color:blue;" class="two"></div>
+	<div style="background-color:green;" class="three"></div>
+	<div style="background-color:yellow;" class="four"></div>
+
+	<!--example code for example 2 -->
+	<pre>
+		$(".one").click(function() {
+			$(this).css({
+				"background-color": "black",
+				"border": "4px solid red"});});
+	</pre><br><br>
+
+	<!--a set of 4 squares to help with example 3 -->
+	<div style="background-color:red;" class="alert"></div>
+	<div style="background-color:blue;" class="alert"></div>
+	<div style="background-color:green;" class="alert"></div>
+	<div style="background-color:yellow;" class="alert"></div>
+
+	<!--example code for example 3 -->
+	<pre>
+		$(".alert").click(function() {
+			alert($(this).css("background-color"));
+	});
+</pre><br><br>
+
+	<script>
+		// example 1 - changes the background-color property for all elements with a class of "topRow" when clicked.
+		$(".topRow").click(function() {
+			$(this).css("background-color", "black");
+		});
+
+		// example 2 - changes multiple element properties at once when clicked.
+		$(".one").click(function() {
+			$(this).css({
+				"background-color": "black",
+				"border": "4px solid red",
+			});
+		});
+
+		$(".two").click(function() {
+			$(this).css({
+				"background-color": "black",
+				"border": "4px solid blue",
+			});
+		});
+
+		$(".three").click(function() {
+			$(this).css({
+				"background-color": "black",
+				"border": "4px solid green",
+			});
+		});
+
+		$(".four").click(function() {
+			$(this).css({
+				"background-color": "black",
+				"border": "4px solid yellow",
+			});
+		});
+
+		// example 3 - has an alert pop-up with the rgb values of the background-color when clicked.
+		$(".alert").click(function() {
+			alert($(this).css("background-color"));
+		});
+
+	</script>
+</body>
+</html>
